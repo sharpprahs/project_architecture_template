@@ -3,12 +3,12 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"deploy": "gh-pages -d build"
-	},
+  "scripts": {
+  "dev": "vite dev",
+  "build": "vite build",
+  "predeploy": "node scripts/nojekyll.mjs",
+  "deploy": "gh-pages -d build -t"
+  },
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/adapter-static": "^3.0.9",

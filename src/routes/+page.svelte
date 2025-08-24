@@ -1,9 +1,7 @@
 <!-- src/routes/+page.svelte -->
 <script>
-    import { assets, base } from "$app/paths";
-    // оба работают, используйте один из них:
-    const imgUrl = `${assets}/diagram.png`; // рекомендую
-    // либо: const imgUrl = `${base}/diagram.png`;
+    import { assets } from "$app/paths";
+    const diagram = `${assets}/diagram.png`;
 </script>
 
 <!-- Весь экран + фон -->
@@ -1202,7 +1200,7 @@
                 </p>
 
                 <img
-                    src={imgUrl}
+                    src={diagram}
                     alt="Скриншот архитектуры"
                     class="w-full rounded-xl border"
                 />
