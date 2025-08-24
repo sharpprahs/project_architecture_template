@@ -1,10 +1,14 @@
 import adapter from '@sveltejs/adapter-static';
 
+const dev = process.argv.includes('dev');
+
 const config = {
   kit: {
-    adapter: adapter({
-      fallback: 'index.html'
-    })
+    adapter: adapter({ fallback: 'index.html' }),
+    paths: {
+      // для локалки пусто, для GH Pages — имя репозитория
+      base: dev ? '' : '/project_architecture_template'
+    }
   }
 };
 
