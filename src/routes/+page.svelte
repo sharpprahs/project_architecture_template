@@ -1,7 +1,6 @@
 <!-- src/routes/+page.svelte -->
 <script>
-    import { assets } from "$app/paths";
-    const diagram = `${assets}/diagram.png`;
+    import { base } from '$app/paths';
 </script>
 
 <!-- Весь экран + фон -->
@@ -1200,7 +1199,7 @@
                 </p>
 
                 <img
-                    src={diagram}
+                    src="{base}/diagram.png"
                     alt="Скриншот архитектуры"
                     class="w-full rounded-xl border"
                 />
@@ -1211,6 +1210,7 @@
             *Keycloak — опционально, если потребуется SSO/LDAP. Выдача списков —
             из OpenSearch; детали/финансы — из Postgres; кэширование —
             Dragonfly; события/команды — NATS.
+            <a href="https://t.me/sharpsss" class="text-neutral-500 text-sm pl-2" target="_blank">🐨sharpsss dev</a>
         </footer>
     </div>
 </div>
