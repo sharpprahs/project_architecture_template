@@ -1,6 +1,6 @@
 <!-- src/routes/+page.svelte -->
 <script>
-    import { base } from '$app/paths';
+    import { base } from "$app/paths";
 </script>
 
 <!-- Весь экран + фон -->
@@ -26,6 +26,11 @@
                     rel="noopener"
                     class="text-xs md:text-sm px-3 py-1 rounded-full border bg-white hover:bg-slate-50 font-medium"
                     >Более общая демонстрация в Exalidraw ↗</a
+                >
+                <a
+                    href="{base}/preliminary_deadlines"
+                    class="text-xs md:text-sm px-3 py-1 rounded-full border bg-white hover:bg-slate-50"
+                    >План-сроки</a
                 >
             </nav>
         </header>
@@ -1210,7 +1215,11 @@
             *Keycloak — опционально, если потребуется SSO/LDAP. Выдача списков —
             из OpenSearch; детали/финансы — из Postgres; кэширование —
             Dragonfly; события/команды — NATS.
-            <a href="https://t.me/sharpsss" class="text-neutral-500 text-sm pl-2" target="_blank">🐨sharpsss dev</a>
+            <a
+                href="https://t.me/sharpsss"
+                class="text-neutral-500 text-sm"
+                target="_blank">🐨sharpsss dev</a
+            >
         </footer>
     </div>
 </div>

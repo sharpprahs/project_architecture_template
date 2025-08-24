@@ -1,0 +1,118 @@
+<script>
+    // нужен для корректных ссылок на GitHub Pages (base префикс)
+  import { base } from '$app/paths';
+
+  const rows = [
+    {
+      month: '1',
+      goals:
+        'Архитектура, макеты в Figma, ER-диаграмма БД, стратегия интеграций. Dev-окружение (Docker Compose). Базовая CI.',
+      results: 'Черновые макеты, схема БД, репозиторий + CI, dev-стенд.'
+    },
+    {
+      month: '2',
+      goals:
+        'ETL (Go) для 1–2 поставщиков (REST/SOAP), нормализация номенклатуры, загрузка медиа в MinIO, подключение NATS/Dragonfly.',
+      results: 'Первые загрузки в Postgres, картинки в MinIO, события в NATS.'
+    },
+    {
+      month: '3',
+      goals:
+        'Ещё 5–6 поставщиков (CSV/XLS/парсинг), правила ценообразования (маржа/округления), первичная интеграция с OpenSearch (индекс каталога).',
+      results: 'Поиск по 100–200k SKU, базовые фильтры/фасеты.'
+    },
+    {
+      month: '4',
+      goals:
+        'Витрина (SvelteKit): категории, фильтры, карточка, корзина, кабинет; Backend (Fastify) для публичного API; кэширование Dragonfly.',
+      results: 'Публичный прототип витрины на тестовом домене.'
+    },
+    {
+      month: '5',
+      goals:
+        'CRM/Админка (SvelteKit): заказы, счета, чат; Backend-админ (RBAC, WS), схемы orders/bills/pricing, события order.created/bill.updated.',
+      results: 'Рабочая админка, базовые процессы продаж.'
+    },
+    {
+      month: '6',
+      goals:
+        'Подключение остальных поставщиков (до 20+), массовая загрузка 500k–1M SKU, оптимизация ETL (батчи, дедуп, остатки), стабильность.',
+      results: 'Полный каталог, стабильные обновления.'
+    },
+    {
+      month: '7',
+      goals:
+        'Наблюдаемость: Prometheus+Grafana, Loki+алерты; оптимизация Postgres (индексы/реплики), инвалидация кэшей через NATS, подготовка staging/prod.',
+      results: 'Дашборды и алерты, подготовка к продакшену.'
+    },
+    {
+      month: '8',
+      goals:
+        'Полировка UX, нагрузочное тестирование, документация, (опционально) Kubernetes, финальные демо и запуск.',
+      results: 'Запуск и передача.'
+    }
+  ];
+</script>
+
+<div class="min-h-screen w-full bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800 p-6 md:p-10">
+  <div class="max-w-6xl mx-auto">
+    <!-- HEADER -->
+    <header class="mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Ориентировочные сроки и этапы (1 разработчик ~8 месяцев)</h1>
+      <p class="text-sm md:text-base text-slate-600 mt-2">
+        Это ориентировочная дорожная карта. Финальные сроки уточним после макетов и фиксации функционала.
+      </p>
+      <a
+        href="{base}/"
+        class="inline-block mt-4 text-xs md:text-sm px-3 py-1 rounded-full border bg-white hover:bg-slate-50"
+        >← Назад к архитектуре</a
+      >
+    </header>
+
+    <!-- MOBILE: карточки (до md) -->
+    <div class="md:hidden space-y-3">
+      {#each rows as r}
+        <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-4">
+          <div class="flex items-center gap-2 mb-1">
+            <div class="h-2 w-2 rounded-full bg-emerald-500"></div>
+            <h3 class="font-semibold">Месяц {r.month}</h3>
+          </div>
+          <div class="text-xs text-slate-500 mb-2">Цели</div>
+          <p class="text-sm text-slate-700">{r.goals}</p>
+          <div class="mt-3 text-xs text-slate-500 mb-1">Ключевые результаты</div>
+          <p class="text-sm text-slate-700">{r.results}</p>
+        </div>
+      {/each}
+    </div>
+
+    <!-- DESKTOP/TABLET: таблица (от md) -->
+    <div class="hidden md:block rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden mt-2">
+      <!-- горизонтальный скролл на узких планшетах -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm min-w-[800px]">
+          <thead class="bg-slate-50 text-slate-600">
+            <tr>
+              <th class="text-left p-3 w-28">Месяц</th>
+              <th class="text-left p-3">Цели</th>
+              <th class="text-left p-3 w-[28rem]">Ключевые результаты</th>
+            </tr>
+          </thead>
+          <tbody class="[&_tr:not(:last-child)]:border-b [&_tr]:border-slate-200">
+            {#each rows as r}
+              <tr class="align-top">
+                <td class="p-3 font-medium">{r.month}</td>
+                <td class="p-3">{r.goals}</td>
+                <td class="p-3">{r.results}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mt-6 text-xs text-slate-500">
+      Примечание: ускорение возможно при подключении доп. разработчиков (фронт/DevOps).
+      <a href="https://t.me/sharpsss" target="_blank" class="text-neutral-500 text-sm">🐨 sharpsss dev</a>
+    </div>
+  </div>
+</div>
