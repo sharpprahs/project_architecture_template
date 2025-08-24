@@ -4,18 +4,18 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/0.BICEwr7n.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.CtZ0h11r.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/2.tn0RQdqM.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.DL97XIzK.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/mCL_5gME.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.Cld7U0sW.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CTLoXQoR.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/soTo0rGv.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/B5Hc0_3G.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/CGmblgsE.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.DDnZZHlt.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Z2bE9CVQ.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.BV4I65d_.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/DsnmJJEf.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.Dbnno-bi.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.CLYovUtC.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/BOKKY-QO.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.jNBS8nUA.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.BgT-TgoA.js">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents"><!--[--><!--[--><!----><!----><!----><div class="min-h-screen w-full scroll-smooth bg-gradient-to-b from-slate-50 to-slate-100 text-slate-800 p-6 md:p-10"><div class="max-w-7xl mx-auto"><header class="mb-8"><h1 class="text-2xl md:text-3xl font-bold tracking-tight">Архитектура и потоки по сервисам</h1> <p class="text-sm md:text-base text-slate-600 mt-2">CRM (чат/инвойсы/биллинг/маржа/статистика), Витрина (магазин),
@@ -31,11 +31,11 @@
                     шлёт events для UI.</p></div></section> <section id="etl" class="mt-14 scroll-mt-24"><div class="mb-3"><h2 class="text-lg font-semibold text-slate-700">ETL (Go): источники и назначения</h2></div> <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-5"><div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-4"><div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">Поставщики</h3></div> <p class="text-sm text-slate-600 mb-3">Treolan (REST), VTT (SOAP), парсинг</p> <span class="inline-block text-xs bg-slate-100 border border-slate-200 rounded-full px-2 py-0.5 mr-1 mb-1">Каталоги/категории</span> <span class="inline-block text-xs bg-slate-100 border border-slate-200 rounded-full px-2 py-0.5 mr-1 mb-1">Runtime цены/остатки</span> <span class="inline-block text-xs bg-slate-100 border border-slate-200 rounded-full px-2 py-0.5 mr-1 mb-1">Медиа/сертификаты</span></div> <div class="flex justify-center"><svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#arrowhead-right"></use></svg></div> <div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">ETL Воркеры (Go)</h3></div> <p class="text-sm text-slate-600 mb-3">fetch → normalize → dedup → price → publish</p> <ul class="list-disc pl-5 space-y-1 text-sm"><li>Retry/backoff, лимиты, SLA на коннекторы</li> <li>Бренд/категория мэппинг, мердж офферов</li> <li>Правила ценообразования (pricing)</li></ul></div> <div class="flex justify-center"><svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#arrowhead-right"></use></svg></div> <div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">PostgreSQL (write)</h3></div> <p class="text-sm text-slate-600">catalog/offers/pricing</p></div> <div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">NATS (publish)</h3></div> <p class="text-sm text-slate-600">events: offers.updated, price.updated</p></div></div></div> <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-4 mt-6"><div></div> <div class="hidden lg:block"></div> <div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">OpenSearch (write)</h3></div> <p class="text-sm text-slate-600">Δ-индексация каталога/фасетов</p></div> <div class="flex justify-center"><svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#arrowhead-right"></use></svg></div> <div class="relative rounded-2xl border border-slate-200 bg-white shadow-sm p-4"><div class="flex items-center gap-2 mb-1"><div class="h-2 w-2 rounded-full bg-emerald-500"></div> <h3 class="font-semibold">MinIO (write) + CDN</h3></div> <p class="text-sm text-slate-600">скачать/конвертировать медиа → загрузить</p></div></div> <p class="text-xs text-slate-500 mt-2">Команды из CRM: <code>supplier.order.create</code>/<code>bill.create</code> → ETL вызывает API поставщика, пишет статус/счёт в Postgres,
                     публикует <code>bill.updated</code>.</p></div></section> <section id="screenshot" class="mt-14 scroll-mt-24"><div class="mb-3"><h2 class="text-lg font-semibold text-slate-700">Скриншот/превью для заказчика</h2></div> <div class="rounded-2xl border border-slate-200 bg-white shadow-sm p-5"><p class="text-sm text-slate-600 mb-3">Демонстрация в <a href="https://excalidraw.com/#room=197a1f2dba8d55b0ba54,u9Wn2EpMpz1lPOXYqXALqA" target="_blank" class="text-sky-800">Excalidraw</a>.</p> <img src="./diagram.png" alt="Скриншот архитектуры" class="w-full rounded-xl border"/></div></section> <footer class="mt-12 text-xs text-slate-500">*Keycloak — опционально, если потребуется SSO/LDAP. Выдача списков —
             из OpenSearch; детали/финансы — из Postgres; кэширование —
-            Dragonfly; события/команды — NATS.</footer></div></div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+            Dragonfly; события/команды — NATS. <a href="https://t.me/sharpsss" class="text-neutral-500 text-sm pl-2" target="_blank">🐨sharpsss dev</a></footer></div></div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_f6u2n2 = {
+					__sveltekit_1nvayu0 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/project_architecture_template"
 					};
@@ -43,8 +43,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.DL97XIzK.js"),
-						import("./_app/immutable/entry/app.DDnZZHlt.js")
+						import("./_app/immutable/entry/start.Cld7U0sW.js"),
+						import("./_app/immutable/entry/app.BV4I65d_.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2],
